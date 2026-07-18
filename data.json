@@ -1,10 +1,250 @@
 {
-  "updatedAt": "2026-07-18T22:56:44.885Z",
-  "fecha": "2026-07-18",
-  "ventas": 0,
-  "pedidos": 0,
-  "ticketPromedio": 0,
-  "productoTop": null,
-  "carritosAbandonados": 0,
-  "moneda": "COP"
+  "updatedAt": "2026-07-18T23:04:21.823Z",
+  "timezone": "America/Bogota",
+  "moneda": "COP",
+  "dias": [
+    {
+      "fecha": "2026-06-19",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-20",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-21",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-22",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-23",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-24",
+      "ventas": 15000,
+      "pedidos": 1,
+      "ticketPromedio": 15000,
+      "carritosAbandonados": 0,
+      "productoTop": {
+        "titulo": "LIPGLOSS HIDRATANTE GEGE 02",
+        "cantidad": 1
+      }
+    },
+    {
+      "fecha": "2026-06-25",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-26",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-27",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-28",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-29",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-06-30",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-01",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-02",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 1,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-03",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-04",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-05",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-06",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-07",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-08",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-09",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-10",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-11",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-12",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-13",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-14",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-15",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-16",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 1,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-17",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-18",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    }
+  ]
 }

@@ -8,15 +8,18 @@ if (!STORE || !TOKEN) {
 }
 
 const API_VERSION = "2024-01";
+const DIAS_HISTORIAL = 30;
 
-function bogotaDayStartISO() {
-  // Bogotá is fixed UTC-5, no DST.
-  const now = new Date();
-  const bogota = new Date(now.toLocaleString("en-US", { timeZone: "America/Bogota" }));
+function bogotaDateParts(date) {
+  const bogota = new Date(date.toLocaleString("en-US", { timeZone: "America/Bogota" }));
   const y = bogota.getFullYear();
   const m = String(bogota.getMonth() + 1).padStart(2, "0");
   const d = String(bogota.getDate()).padStart(2, "0");
-  return `${y}-${m}-${d}T00:00:00-05:00`;
+  return `${y}-${m}-${d}`;
+}
+
+function bogotaDayStartISO(date) {
+  return `${bogotaDateParts(date)}T00:00:00-05:00`;
 }
 
 async function shopifyGet(path) {
@@ -30,46 +33,76 @@ async function shopifyGet(path) {
 }
 
 async function main() {
-  const dayStart = bogotaDayStartISO();
+  const historyStart = new Date(Date.now() - DIAS_HISTORIAL * 24 * 60 * 60 * 1000);
+  const historyStartISO = bogotaDayStartISO(historyStart);
 
   const { orders = [] } = await shopifyGet(
-    `orders.json?status=any&created_at_min=${encodeURIComponent(dayStart)}&limit=250`
+    `orders.json?status=any&created_at_min=${encodeURIComponent(historyStartISO)}&limit=250`
+  );
+  const { checkouts = [] } = await shopifyGet(
+    `checkouts.json?created_at_min=${encodeURIComponent(historyStartISO)}&limit=250`
   );
 
   const paidOrders = orders.filter((o) => o.cancelled_at === null);
 
-  const ventas = paidOrders.reduce((sum, o) => sum + parseFloat(o.current_total_price || o.total_price || 0), 0);
-  const pedidos = paidOrders.length;
-  const ticketPromedio = pedidos > 0 ? ventas / pedidos : 0;
+  // Build the last DIAS_HISTORIAL day buckets (oldest -> newest), Bogotá calendar days.
+  const dias = [];
+  for (let i = DIAS_HISTORIAL - 1; i >= 0; i--) {
+    const fecha = bogotaDateParts(new Date(Date.now() - i * 24 * 60 * 60 * 1000));
+    dias.push({
+      fecha,
+      ventas: 0,
+      pedidos: 0,
+      carritosAbandonados: 0,
+      productos: {},
+    });
+  }
+  const porFecha = Object.fromEntries(dias.map((d) => [d.fecha, d]));
 
-  const productCounts = {};
   for (const order of paidOrders) {
+    const fecha = bogotaDateParts(new Date(order.created_at));
+    const bucket = porFecha[fecha];
+    if (!bucket) continue;
+    bucket.ventas += parseFloat(order.current_total_price || order.total_price || 0);
+    bucket.pedidos += 1;
     for (const item of order.line_items || []) {
-      productCounts[item.title] = (productCounts[item.title] || 0) + item.quantity;
-    }
-  }
-  let productoTop = null;
-  let maxQty = 0;
-  for (const [title, qty] of Object.entries(productCounts)) {
-    if (qty > maxQty) {
-      maxQty = qty;
-      productoTop = title;
+      bucket.productos[item.title] = (bucket.productos[item.title] || 0) + item.quantity;
     }
   }
 
-  const { checkouts = [] } = await shopifyGet(
-    `checkouts.json?created_at_min=${encodeURIComponent(dayStart)}&limit=250`
-  );
+  for (const checkout of checkouts) {
+    const fecha = bogotaDateParts(new Date(checkout.created_at));
+    const bucket = porFecha[fecha];
+    if (!bucket) continue;
+    bucket.carritosAbandonados += 1;
+  }
+
+  const moneda = paidOrders[0]?.currency || "COP";
+
+  const diasFinal = dias.map((d) => {
+    let productoTop = null;
+    let maxQty = 0;
+    for (const [titulo, cantidad] of Object.entries(d.productos)) {
+      if (cantidad > maxQty) {
+        maxQty = cantidad;
+        productoTop = titulo;
+      }
+    }
+    return {
+      fecha: d.fecha,
+      ventas: d.ventas,
+      pedidos: d.pedidos,
+      ticketPromedio: d.pedidos > 0 ? d.ventas / d.pedidos : 0,
+      carritosAbandonados: d.carritosAbandonados,
+      productoTop: productoTop ? { titulo: productoTop, cantidad: maxQty } : null,
+    };
+  });
 
   const data = {
     updatedAt: new Date().toISOString(),
-    fecha: dayStart.slice(0, 10),
-    ventas,
-    pedidos,
-    ticketPromedio,
-    productoTop: productoTop ? { titulo: productoTop, cantidad: maxQty } : null,
-    carritosAbandonados: checkouts.length,
-    moneda: paidOrders[0]?.currency || "COP",
+    timezone: "America/Bogota",
+    moneda,
+    dias: diasFinal,
   };
 
   console.log(JSON.stringify(data, null, 2));

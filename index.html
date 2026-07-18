@@ -78,11 +78,34 @@
   header.top .subtitulo { font-size: 14px; color: var(--texto-suave); margin: 2px 0 4px; text-transform: uppercase; letter-spacing: 1px; }
   header.top .sub { font-size: 13px; color: var(--texto-suave); }
 
+  .filtros {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .filtros button {
+    border: 1px solid var(--borde);
+    background: var(--card-bg);
+    color: var(--texto-suave);
+    padding: 8px 16px;
+    border-radius: 999px;
+    font-size: 13px;
+    cursor: pointer;
+    font-weight: 600;
+  }
+  .filtros button.activo {
+    background: var(--dorado);
+    border-color: var(--dorado);
+    color: #fff;
+  }
+
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 14px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
   }
   .tile {
     background: var(--card-bg);
@@ -104,6 +127,66 @@
   }
   .tile.acento { border-color: var(--dorado); background: linear-gradient(160deg, #fff, var(--rosa-suave)); }
   .tile .value.dorado { color: var(--dorado); }
+
+  .chart-card {
+    background: var(--card-bg);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 18px 20px 14px;
+    margin-bottom: 20px;
+  }
+  .chart-card .label {
+    font-size: 12px;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 12px;
+  }
+  .chart-wrap {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+    height: 120px;
+  }
+  .bar {
+    flex: 1;
+    background: var(--dorado);
+    border-radius: 4px 4px 0 0;
+    min-height: 2px;
+    position: relative;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.15s;
+  }
+  .bar:hover { opacity: 1; }
+  .bar .tooltip {
+    display: none;
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 6px;
+    background: var(--texto);
+    color: #fff;
+    font-size: 11px;
+    padding: 5px 8px;
+    border-radius: 6px;
+    white-space: nowrap;
+    z-index: 2;
+  }
+  .bar:hover .tooltip { display: block; }
+  .chart-eje {
+    display: flex;
+    gap: 4px;
+    margin-top: 4px;
+  }
+  .chart-eje span {
+    flex: 1;
+    text-align: center;
+    font-size: 10px;
+    color: var(--texto-suave);
+  }
 
   .pendientes {
     background: var(--card-bg);
@@ -156,9 +239,15 @@
       <div class="sub" id="fecha-label">Cargando fecha…</div>
     </header>
 
+    <div class="filtros" id="filtros">
+      <button data-dias="7" class="activo">Últimos 7 días</button>
+      <button data-dias="14">Últimos 14 días</button>
+      <button data-dias="30">Últimos 30 días</button>
+    </div>
+
     <div class="grid">
       <div class="tile acento">
-        <div class="label">Ventas del día</div>
+        <div class="label">Ventas</div>
         <div class="value dorado" id="v-ventas">—</div>
       </div>
       <div class="tile">
@@ -174,9 +263,15 @@
         <div class="value" id="v-carritos">—</div>
       </div>
       <div class="tile">
-        <div class="label">Producto más vendido hoy</div>
+        <div class="label">Producto más vendido</div>
         <div class="value" id="v-top" style="font-size:18px;">—</div>
       </div>
+    </div>
+
+    <div class="chart-card">
+      <div class="label">Ventas por día</div>
+      <div class="chart-wrap" id="chart"></div>
+      <div class="chart-eje" id="chart-eje"></div>
     </div>
 
     <div class="pendientes">
@@ -214,23 +309,76 @@
     return new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 }).format(n || 0);
   }
 
+  let DATOS = null;
+  let DIAS_SELECCIONADOS = 7;
+
+  function fechaCorta(fechaISO) {
+    const [y, m, d] = fechaISO.split("-");
+    return `${d}/${m}`;
+  }
+
+  function renderRango() {
+    if (!DATOS) return;
+    const dias = DATOS.dias.slice(-DIAS_SELECCIONADOS);
+
+    const ventas = dias.reduce((s, d) => s + d.ventas, 0);
+    const pedidos = dias.reduce((s, d) => s + d.pedidos, 0);
+    const carritos = dias.reduce((s, d) => s + d.carritosAbandonados, 0);
+    const ticketPromedio = pedidos > 0 ? ventas / pedidos : 0;
+
+    const productos = {};
+    for (const d of dias) {
+      if (d.productoTop) {
+        productos[d.productoTop.titulo] = (productos[d.productoTop.titulo] || 0) + d.productoTop.cantidad;
+      }
+    }
+    let productoTop = null, maxQty = 0;
+    for (const [titulo, cantidad] of Object.entries(productos)) {
+      if (cantidad > maxQty) { maxQty = cantidad; productoTop = titulo; }
+    }
+
+    document.getElementById("fecha-label").textContent =
+      `${fechaCorta(dias[0].fecha)} — ${fechaCorta(dias[dias.length - 1].fecha)}`;
+    document.getElementById("v-ventas").textContent = formatoCOP(ventas);
+    document.getElementById("v-pedidos").textContent = pedidos;
+    document.getElementById("v-ticket").textContent = formatoCOP(ticketPromedio);
+    document.getElementById("v-carritos").textContent = carritos;
+    document.getElementById("v-top").textContent = productoTop
+      ? `${productoTop} (${maxQty})`
+      : "Sin ventas en el rango";
+
+    const chart = document.getElementById("chart");
+    const eje = document.getElementById("chart-eje");
+    const maxVenta = Math.max(...dias.map((d) => d.ventas), 1);
+    chart.innerHTML = dias.map((d) => {
+      const alturaPct = Math.max((d.ventas / maxVenta) * 100, d.ventas > 0 ? 4 : 1);
+      return `<div class="bar" style="height:${alturaPct}%">
+        <div class="tooltip">${fechaCorta(d.fecha)} · ${formatoCOP(d.ventas)}</div>
+      </div>`;
+    }).join("");
+    eje.innerHTML = dias.map((d, i) => {
+      const mostrar = dias.length <= 10 || i % Math.ceil(dias.length / 8) === 0 || i === dias.length - 1;
+      return `<span>${mostrar ? fechaCorta(d.fecha) : ""}</span>`;
+    }).join("");
+
+    const actualizado = new Date(DATOS.updatedAt);
+    document.getElementById("actualizado").textContent =
+      "Última actualización: " + actualizado.toLocaleString("es-CO", { timeZone: "America/Bogota" }) + " (hora Medellín) — se refresca cada hora";
+  }
+
+  document.getElementById("filtros").addEventListener("click", (e) => {
+    const btn = e.target.closest("button[data-dias]");
+    if (!btn) return;
+    DIAS_SELECCIONADOS = parseInt(btn.dataset.dias, 10);
+    document.querySelectorAll("#filtros button").forEach((b) => b.classList.toggle("activo", b === btn));
+    renderRango();
+  });
+
   async function cargarDatos() {
     try {
       const res = await fetch("./data.json?_=" + Date.now());
-      const d = await res.json();
-
-      document.getElementById("fecha-label").textContent = "Hoy — " + d.fecha;
-      document.getElementById("v-ventas").textContent = formatoCOP(d.ventas);
-      document.getElementById("v-pedidos").textContent = d.pedidos;
-      document.getElementById("v-ticket").textContent = formatoCOP(d.ticketPromedio);
-      document.getElementById("v-carritos").textContent = d.carritosAbandonados;
-      document.getElementById("v-top").textContent = d.productoTop
-        ? `${d.productoTop.titulo} (${d.productoTop.cantidad})`
-        : "Sin ventas aún hoy";
-
-      const actualizado = new Date(d.updatedAt);
-      document.getElementById("actualizado").textContent =
-        "Última actualización: " + actualizado.toLocaleString("es-CO", { timeZone: "America/Bogota" }) + " (hora Medellín) — se refresca cada hora";
+      DATOS = await res.json();
+      renderRango();
     } catch (e) {
       document.getElementById("actualizado").textContent = "No se pudo cargar data.json";
     }
