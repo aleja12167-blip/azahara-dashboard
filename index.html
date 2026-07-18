@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="robots" content="noindex, nofollow" />
+<title>Azahara — Tablero diario</title>
+<style>
+  :root {
+    --rosa: #F4C6CE;
+    --rosa-suave: #FCEEF0;
+    --dorado: #C9A24B;
+    --texto: #3A2E2E;
+    --texto-suave: #8A7373;
+    --card-bg: #FFFFFF;
+    --bg: #FAF3F0;
+    --borde: #F0DCE0;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--texto);
+    min-height: 100vh;
+  }
+
+  /* --- Password gate --- */
+  #gate {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(160deg, var(--rosa-suave), var(--rosa));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+  #gate .box {
+    background: var(--card-bg);
+    padding: 40px 36px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    text-align: center;
+    width: min(90vw, 340px);
+  }
+  #gate .flor { font-size: 32px; margin-bottom: 8px; }
+  #gate h1 { font-size: 18px; margin: 0 0 4px; }
+  #gate p { font-size: 13px; color: var(--texto-suave); margin: 0 0 20px; }
+  #gate input {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid var(--borde);
+    font-size: 15px;
+    text-align: center;
+    outline: none;
+  }
+  #gate input:focus { border-color: var(--dorado); }
+  #gate button {
+    width: 100%;
+    margin-top: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: var(--dorado);
+    color: white;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  #gate .error { color: #C0455A; font-size: 12px; margin-top: 10px; min-height: 16px; }
+
+  /* --- Dashboard --- */
+  #dashboard { display: none; max-width: 960px; margin: 0 auto; padding: 32px 20px 60px; }
+  header.top { text-align: center; margin-bottom: 28px; }
+  header.top .flor { font-size: 28px; }
+  header.top h1 { font-size: 22px; margin: 4px 0 2px; letter-spacing: 0.5px; }
+  header.top .sub { font-size: 13px; color: var(--texto-suave); }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 24px;
+  }
+  .tile {
+    background: var(--card-bg);
+    border: 1px solid var(--borde);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .tile .label {
+    font-size: 12px;
+    color: var(--texto-suave);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+    margin-bottom: 6px;
+  }
+  .tile .value {
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--texto);
+  }
+  .tile.acento { border-color: var(--dorado); background: linear-gradient(160deg, #fff, var(--rosa-suave)); }
+  .tile .value.dorado { color: var(--dorado); }
+
+  .pendientes {
+    background: var(--card-bg);
+    border: 1px dashed var(--borde);
+    border-radius: 14px;
+    padding: 18px 20px;
+    font-size: 13px;
+    color: var(--texto-suave);
+    line-height: 1.6;
+  }
+  .pendientes strong { color: var(--texto); }
+
+  footer.meta {
+    text-align: center;
+    font-size: 11px;
+    color: var(--texto-suave);
+    margin-top: 24px;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #241A1C;
+      --card-bg: #2E2226;
+      --texto: #F3E7E5;
+      --texto-suave: #B49B98;
+      --borde: #43333688;
+      --rosa-suave: #3A2A2E;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div id="gate">
+    <div class="box">
+      <div class="flor">🌸</div>
+      <h1>Tablero Azahara</h1>
+      <p>Ingresa la clave para ver las métricas del día</p>
+      <input type="password" id="clave" placeholder="Clave" autocomplete="off" />
+      <button onclick="intentarEntrar()">Entrar</button>
+      <div class="error" id="error-msg"></div>
+    </div>
+  </div>
+
+  <div id="dashboard">
+    <header class="top">
+      <div class="flor">🌸</div>
+      <h1>Tablero diario — Azahara</h1>
+      <div class="sub" id="fecha-label">Cargando fecha…</div>
+    </header>
+
+    <div class="grid">
+      <div class="tile acento">
+        <div class="label">Ventas del día</div>
+        <div class="value dorado" id="v-ventas">—</div>
+      </div>
+      <div class="tile">
+        <div class="label">Pedidos</div>
+        <div class="value" id="v-pedidos">—</div>
+      </div>
+      <div class="tile">
+        <div class="label">Ticket promedio</div>
+        <div class="value" id="v-ticket">—</div>
+      </div>
+      <div class="tile">
+        <div class="label">Carritos abandonados</div>
+        <div class="value" id="v-carritos">—</div>
+      </div>
+      <div class="tile">
+        <div class="label">Producto más vendido hoy</div>
+        <div class="value" id="v-top" style="font-size:18px;">—</div>
+      </div>
+    </div>
+
+    <div class="pendientes">
+      <strong>Pendiente de revisión manual (1 vez por semana):</strong><br />
+      Visitas, tasa de conversión y fuente de tráfico no las expone la API de Shopify — revísalas en
+      <em>Shopify Admin → Analytics</em>. Google Search Console para clics/impresiones de Google.
+    </div>
+
+    <footer class="meta" id="actualizado">—</footer>
+  </div>
+
+<script>
+  const CLAVE_CORRECTA = "azahara2026";
+
+  function intentarEntrar() {
+    const input = document.getElementById("clave").value;
+    if (input === CLAVE_CORRECTA) {
+      sessionStorage.setItem("azahara_ok", "1");
+      mostrarDashboard();
+    } else {
+      document.getElementById("error-msg").textContent = "Clave incorrecta";
+    }
+  }
+  document.getElementById("clave").addEventListener("keydown", (e) => {
+    if (e.key === "Enter") intentarEntrar();
+  });
+
+  function mostrarDashboard() {
+    document.getElementById("gate").style.display = "none";
+    document.getElementById("dashboard").style.display = "block";
+    cargarDatos();
+  }
+
+  function formatoCOP(n) {
+    return new Intl.NumberFormat("es-CO", { style: "currency", currency: "COP", maximumFractionDigits: 0 }).format(n || 0);
+  }
+
+  async function cargarDatos() {
+    try {
+      const res = await fetch("./data.json?_=" + Date.now());
+      const d = await res.json();
+
+      document.getElementById("fecha-label").textContent = "Hoy — " + d.fecha;
+      document.getElementById("v-ventas").textContent = formatoCOP(d.ventas);
+      document.getElementById("v-pedidos").textContent = d.pedidos;
+      document.getElementById("v-ticket").textContent = formatoCOP(d.ticketPromedio);
+      document.getElementById("v-carritos").textContent = d.carritosAbandonados;
+      document.getElementById("v-top").textContent = d.productoTop
+        ? `${d.productoTop.titulo} (${d.productoTop.cantidad})`
+        : "Sin ventas aún hoy";
+
+      const actualizado = new Date(d.updatedAt);
+      document.getElementById("actualizado").textContent =
+        "Última actualización: " + actualizado.toLocaleString("es-CO", { timeZone: "America/Bogota" }) + " (hora Medellín) — se refresca cada hora";
+    } catch (e) {
+      document.getElementById("actualizado").textContent = "No se pudo cargar data.json";
+    }
+  }
+
+  if (sessionStorage.getItem("azahara_ok") === "1") {
+    mostrarDashboard();
+  }
+</script>
+
+</body>
+</html>

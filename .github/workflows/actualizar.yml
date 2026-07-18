@@ -1,0 +1,33 @@
+name: Actualizar métricas Azahara
+
+on:
+  schedule:
+    - cron: "0 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Obtener métricas de Shopify
+        env:
+          SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE }}
+          SHOPIFY_TOKEN: ${{ secrets.SHOPIFY_TOKEN }}
+        run: node fetch-metrics.js
+
+      - name: Commitear data.json si cambió
+        run: |
+          git config user.name "azahara-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data.json
+          git diff --staged --quiet || git commit -m "Actualiza métricas $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+          git push
