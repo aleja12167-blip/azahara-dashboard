@@ -1,16 +1,8 @@
 {
-  "updatedAt": "2026-07-19T03:41:01.919Z",
+  "updatedAt": "2026-07-19T06:31:54.011Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-06-19",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null
-    },
     {
       "fecha": "2026-06-20",
       "ventas": 0,
@@ -240,6 +232,14 @@
     },
     {
       "fecha": "2026-07-18",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null
+    },
+    {
+      "fecha": "2026-07-19",
       "ventas": 0,
       "pedidos": 0,
       "ticketPromedio": 0,
