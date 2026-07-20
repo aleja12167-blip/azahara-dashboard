@@ -24,6 +24,12 @@ jobs:
           SHOPIFY_TOKEN: ${{ secrets.SHOPIFY_TOKEN }}
         run: node fetch-metrics.js
 
+      - name: Obtener embudo de conversión de GA4
+        env:
+          GA4_PROPERTY_ID: ${{ secrets.GA4_PROPERTY_ID }}
+          GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
+        run: node fetch-ga4-funnel.js
+
       - name: Commitear data.json si cambió
         run: |
           git config user.name "azahara-bot"

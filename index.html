@@ -189,6 +189,40 @@
     color: var(--texto-suave);
   }
 
+  .embudo-fila {
+    display: grid;
+    grid-template-columns: 140px 1fr 90px;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 13px;
+  }
+  .embudo-fila .etiqueta { color: var(--texto-suave); }
+  .embudo-fila .barra-wrap {
+    background: var(--rosa-suave);
+    border-radius: 6px;
+    overflow: hidden;
+    height: 22px;
+  }
+  .embudo-fila .barra {
+    height: 100%;
+    background: var(--dorado);
+    border-radius: 6px;
+    min-width: 2px;
+    transition: width 0.3s;
+  }
+  .embudo-fila .valores {
+    text-align: right;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .embudo-fila .valores .pct {
+    font-weight: 400;
+    color: var(--texto-suave);
+    font-size: 11px;
+    margin-left: 4px;
+  }
+
   .pendientes {
     background: var(--card-bg);
     border: 1px dashed var(--borde);
@@ -275,10 +309,15 @@
       <div class="chart-eje" id="chart-eje"></div>
     </div>
 
+    <div class="chart-card">
+      <div class="label">Embudo de conversión</div>
+      <div id="embudo"></div>
+    </div>
+
     <div class="pendientes">
       <strong>Pendiente de revisión manual (1 vez por semana):</strong><br />
-      Visitas, tasa de conversión y fuente de tráfico no las expone la API de Shopify — revísalas en
-      <em>Shopify Admin → Analytics</em>. Google Search Console para clics/impresiones de Google.
+      Fuente de tráfico (de dónde llega la gente) — revísala en <em>Shopify Admin → Analytics</em>.
+      Google Search Console para clics/impresiones de Google.
     </div>
 
     <footer class="meta" id="actualizado">—</footer>
@@ -360,6 +399,35 @@
     eje.innerHTML = dias.map((d, i) => {
       const mostrar = dias.length <= 10 || i % Math.ceil(dias.length / 8) === 0 || i === dias.length - 1;
       return `<span>${mostrar ? fechaCorta(d.fecha) : ""}</span>`;
+    }).join("");
+
+    const embudoTotales = { visitas: 0, vioProducto: 0, agregoCarrito: 0, iniciarCheckout: 0, compras: 0 };
+    for (const d of dias) {
+      const e = d.embudo || {};
+      embudoTotales.visitas += e.visitas || 0;
+      embudoTotales.vioProducto += e.vioProducto || 0;
+      embudoTotales.agregoCarrito += e.agregoCarrito || 0;
+      embudoTotales.iniciarCheckout += e.iniciarCheckout || 0;
+      embudoTotales.compras += e.compras || 0;
+    }
+    const pasos = [
+      { etiqueta: "Visitas", valor: embudoTotales.visitas },
+      { etiqueta: "Vio producto", valor: embudoTotales.vioProducto },
+      { etiqueta: "Agregó al carrito", valor: embudoTotales.agregoCarrito },
+      { etiqueta: "Inició checkout", valor: embudoTotales.iniciarCheckout },
+      { etiqueta: "Compró", valor: embudoTotales.compras },
+    ];
+    const maxPaso = Math.max(pasos[0].valor, 1);
+    document.getElementById("embudo").innerHTML = pasos.map((p, i) => {
+      const anchoPct = Math.max((p.valor / maxPaso) * 100, p.valor > 0 ? 2 : 0);
+      const pctPrevio = i > 0 && pasos[i - 1].valor > 0
+        ? `<span class="pct">${((p.valor / pasos[i - 1].valor) * 100).toFixed(0)}%</span>`
+        : "";
+      return `<div class="embudo-fila">
+        <div class="etiqueta">${p.etiqueta}</div>
+        <div class="barra-wrap"><div class="barra" style="width:${anchoPct}%"></div></div>
+        <div class="valores">${p.valor}${pctPrevio}</div>
+      </div>`;
     }).join("");
 
     const actualizado = new Date(DATOS.updatedAt);
