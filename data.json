@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-20T18:06:18.439Z",
+  "updatedAt": "2026-07-20T18:52:21.665Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -9,7 +9,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-06-22",
@@ -17,7 +24,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-06-23",
@@ -25,7 +39,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-06-24",
@@ -36,6 +57,13 @@
       "productoTop": {
         "titulo": "LIPGLOSS HIDRATANTE GEGE 02",
         "cantidad": 1
+      },
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
       }
     },
     {
@@ -44,7 +72,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-06-26",
@@ -52,7 +87,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-06-27",
@@ -60,7 +102,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-06-28",
@@ -68,7 +117,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-06-29",
@@ -76,7 +132,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-06-30",
@@ -84,7 +147,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-01",
@@ -92,7 +162,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-02",
@@ -100,7 +177,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 1,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-03",
@@ -108,7 +192,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-04",
@@ -116,7 +207,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-05",
@@ -124,7 +222,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-06",
@@ -132,7 +237,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-07",
@@ -140,7 +252,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-08",
@@ -148,7 +267,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-09",
@@ -156,7 +282,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-10",
@@ -164,7 +297,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-11",
@@ -172,7 +312,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-12",
@@ -180,7 +327,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-13",
@@ -188,7 +342,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-14",
@@ -196,7 +357,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-15",
@@ -204,7 +372,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-16",
@@ -212,7 +387,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 1,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-17",
@@ -220,7 +402,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-18",
@@ -228,7 +417,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-19",
@@ -236,7 +432,14 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 1,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 1,
+        "compras": 0
+      }
     },
     {
       "fecha": "2026-07-20",
@@ -244,7 +447,15 @@
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
-      "productoTop": null
+      "productoTop": null,
+      "embudo": {
+        "visitas": 3,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 1,
+        "compras": 0
+      }
     }
-  ]
+  ],
+  "ga4UpdatedAt": "2026-07-20T18:52:22.511Z"
 }
