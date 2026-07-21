@@ -79,6 +79,26 @@
   header.top .subtitulo { font-size: 14px; color: var(--texto-suave); margin: 2px 0 4px; text-transform: uppercase; letter-spacing: 1px; }
   header.top .sub { font-size: 13px; color: var(--texto-suave); }
 
+  .sync-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .btn-sync {
+    border: none;
+    background: var(--rosa-fuerte);
+    color: #fff;
+    padding: 9px 20px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  .btn-sync:disabled { opacity: 0.6; cursor: default; }
+  .sync-status { font-size: 12px; color: var(--texto-suave); }
+
   .filtros {
     display: flex;
     justify-content: center;
@@ -274,6 +294,11 @@
       <div class="sub" id="fecha-label">Cargando fecha…</div>
     </header>
 
+    <div class="sync-bar">
+      <button id="btn-sincronizar" class="btn-sync" onclick="sincronizar()">↻ Sincronizar</button>
+      <span class="sync-status" id="sync-status"></span>
+    </div>
+
     <div class="filtros" id="filtros">
       <button data-dias="7" class="activo">Últimos 7 días</button>
       <button data-dias="14">Últimos 14 días</button>
@@ -450,6 +475,57 @@
       renderRango();
     } catch (e) {
       document.getElementById("actualizado").textContent = "No se pudo cargar data.json";
+    }
+  }
+
+  // El token real de GitHub vive solo en el Worker (Cloudflare), nunca en este archivo.
+  // Esta clave únicamente autoriza llamar al Worker; no da acceso a nada por sí sola.
+  const SYNC_WORKER_URL = "https://azahara-dashboard-sync.aleja1216g-l.workers.dev";
+  const SYNC_KEY = "67631775193a0c51e068fea2e92a65db5dd192a671186abe";
+
+  function syncHeaders() {
+    return { "X-Sync-Key": SYNC_KEY };
+  }
+
+  async function sincronizar() {
+    const btn = document.getElementById("btn-sincronizar");
+    const status = document.getElementById("sync-status");
+    btn.disabled = true;
+    btn.textContent = "↻ Sincronizando…";
+    status.textContent = "";
+
+    try {
+      const dispatchRes = await fetch(`${SYNC_WORKER_URL}/dispatch`, { method: "POST", headers: syncHeaders() });
+      if (!dispatchRes.ok) throw new Error("No se pudo iniciar la sincronización (" + dispatchRes.status + ")");
+      const { dispatchedAt } = await dispatchRes.json();
+      const disparo = new Date(dispatchedAt);
+
+      let run = null;
+      for (let intento = 0; intento < 10 && !run; intento++) {
+        await new Promise((r) => setTimeout(r, 3000));
+        const res = await fetch(`${SYNC_WORKER_URL}/latest-run`, { headers: syncHeaders() });
+        const data = await res.json();
+        if (data.run && new Date(data.run.created_at) >= disparo) run = data.run;
+      }
+      if (!run) throw new Error("No se encontró la corrida en GitHub Actions, revísala manualmente");
+
+      for (let intento = 0; intento < 30 && run.status !== "completed"; intento++) {
+        await new Promise((r) => setTimeout(r, 4000));
+        const res = await fetch(`${SYNC_WORKER_URL}/latest-run`, { headers: syncHeaders() });
+        const data = await res.json();
+        run = data.run;
+        btn.textContent = "↻ Sincronizando… (" + run.status + ")";
+      }
+      if (run.status !== "completed") throw new Error("Está tardando más de lo normal, revisa GitHub Actions");
+      if (run.conclusion !== "success") throw new Error("Terminó con error (" + run.conclusion + ")");
+
+      await cargarDatos();
+      status.textContent = "✓ Datos actualizados";
+    } catch (e) {
+      status.textContent = "✗ " + e.message;
+    } finally {
+      btn.disabled = false;
+      btn.textContent = "↻ Sincronizar";
     }
   }
 
