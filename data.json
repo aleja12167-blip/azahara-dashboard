@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-07-22T21:10:37.018Z",
+  "updatedAt": "2026-07-22T23:06:15.871Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -449,13 +449,13 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 4,
-        "vioProducto": 0,
+        "visitas": 6,
+        "vioProducto": 1,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
       }
     }
   ],
-  "ga4UpdatedAt": "2026-07-22T21:10:37.852Z"
+  "ga4UpdatedAt": "2026-07-22T23:06:16.749Z"
 }
