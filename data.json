@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T17:01:29.630Z",
+  "updatedAt": "2026-08-02T18:24:15.033Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -446,13 +446,110 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 2,
-        "vioProducto": 2,
+        "visitas": 13,
+        "vioProducto": 19,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
       }
     }
   ],
-  "ga4UpdatedAt": "2026-08-02T17:01:30.434Z"
+  "ga4UpdatedAt": "2026-08-02T18:24:15.701Z",
+  "resenas": {
+    "updatedAt": "2026-08-02T18:24:59.491Z",
+    "items": [
+      {
+        "uuid": "9896925a-8128-4f9b-86ae-3e6016ce049d",
+        "producto": "Paleta de sombras atenea victory",
+        "productoHandle": "paleta-de-sobras-atenea-victory",
+        "calificacion": 5,
+        "texto": "Muy bueno el producto",
+        "autor": "Anónimo",
+        "fecha": "2026-08-02T18:17:45.099Z"
+      },
+      {
+        "uuid": "3b717eab-1821-41e6-ab56-9855c1d41e8c",
+        "producto": "CEPILLO SECADOR KERATINA DE KERATINA",
+        "productoHandle": "cepillo-secador-keratina-de-keratina",
+        "calificacion": 5,
+        "texto": "Buen producto",
+        "autor": "Anónimo",
+        "fecha": "2026-08-02T18:08:51.486Z"
+      },
+      {
+        "uuid": "92b1f9eb-5e5f-4efe-b30e-dff6c6fc36c9",
+        "producto": "Pestañina Profesional Silicion Prosa GRIS",
+        "productoHandle": "pestanina-prosa-maxi-volumen-silicon-gris",
+        "calificacion": 5,
+        "texto": "Muy buena la atención",
+        "autor": "Anónimo",
+        "fecha": "2026-08-02T18:07:17.627Z"
+      },
+      {
+        "uuid": "ccb9636e-1287-4984-aff7-38fa162e59e8",
+        "producto": "Brillo BLOOM SUBLIME XL",
+        "productoHandle": "brillo-bloom-sublime-xl",
+        "calificacion": 5,
+        "texto": "Deja un brillo precioso",
+        "autor": "Alejandra Gómez",
+        "fecha": "2026-08-02T17:25:44.564Z"
+      },
+      {
+        "uuid": "2c099e62-e671-46ba-8743-a96d572edc9e",
+        "producto": "Brillo BLOOM SUBLIME XL",
+        "productoHandle": "brillo-bloom-sublime-xl",
+        "calificacion": 5,
+        "texto": "Me encanta el efecto que deja en lo labios y deja uno brillos hermosos",
+        "autor": "Anónimo",
+        "fecha": "2026-08-02T17:18:29.363Z"
+      }
+    ],
+    "nuevas": [
+      {
+        "uuid": "9896925a-8128-4f9b-86ae-3e6016ce049d",
+        "producto": "Paleta de sombras atenea victory",
+        "productoHandle": "paleta-de-sobras-atenea-victory",
+        "calificacion": 5,
+        "texto": "Muy bueno el producto",
+        "autor": "Anónimo",
+        "fecha": "2026-08-02T18:17:45.099Z"
+      },
+      {
+        "uuid": "3b717eab-1821-41e6-ab56-9855c1d41e8c",
+        "producto": "CEPILLO SECADOR KERATINA DE KERATINA",
+        "productoHandle": "cepillo-secador-keratina-de-keratina",
+        "calificacion": 5,
+        "texto": "Buen producto",
+        "autor": "Anónimo",
+        "fecha": "2026-08-02T18:08:51.486Z"
+      },
+      {
+        "uuid": "92b1f9eb-5e5f-4efe-b30e-dff6c6fc36c9",
+        "producto": "Pestañina Profesional Silicion Prosa GRIS",
+        "productoHandle": "pestanina-prosa-maxi-volumen-silicon-gris",
+        "calificacion": 5,
+        "texto": "Muy buena la atención",
+        "autor": "Anónimo",
+        "fecha": "2026-08-02T18:07:17.627Z"
+      },
+      {
+        "uuid": "ccb9636e-1287-4984-aff7-38fa162e59e8",
+        "producto": "Brillo BLOOM SUBLIME XL",
+        "productoHandle": "brillo-bloom-sublime-xl",
+        "calificacion": 5,
+        "texto": "Deja un brillo precioso",
+        "autor": "Alejandra Gómez",
+        "fecha": "2026-08-02T17:25:44.564Z"
+      },
+      {
+        "uuid": "2c099e62-e671-46ba-8743-a96d572edc9e",
+        "producto": "Brillo BLOOM SUBLIME XL",
+        "productoHandle": "brillo-bloom-sublime-xl",
+        "calificacion": 5,
+        "texto": "Me encanta el efecto que deja en lo labios y deja uno brillos hermosos",
+        "autor": "Anónimo",
+        "fecha": "2026-08-02T17:18:29.363Z"
+      }
+    ]
+  }
 }
