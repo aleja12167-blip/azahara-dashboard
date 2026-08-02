@@ -30,6 +30,12 @@ jobs:
           GA4_SERVICE_ACCOUNT_JSON: ${{ secrets.GA4_SERVICE_ACCOUNT_JSON }}
         run: node fetch-ga4-funnel.js
 
+      - name: Obtener reseñas de Judge.me
+        env:
+          SHOPIFY_STORE: ${{ secrets.SHOPIFY_STORE }}
+          SHOPIFY_TOKEN: ${{ secrets.SHOPIFY_TOKEN }}
+        run: node fetch-judgeme-reviews.js
+
       - name: Commitear data.json si cambió
         run: |
           git config user.name "azahara-bot"

@@ -243,6 +243,49 @@
     margin-left: 4px;
   }
 
+  .resenas-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .resenas-badge {
+    background: var(--rosa-fuerte);
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 9px;
+    border-radius: 999px;
+  }
+  .resena-item {
+    border-bottom: 1px solid var(--borde);
+    padding: 12px 0;
+  }
+  .resena-item:last-child { border-bottom: none; }
+  .resena-item .fila-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    margin-bottom: 4px;
+  }
+  .resena-item .producto {
+    font-weight: 700;
+    font-size: 13px;
+  }
+  .resena-item .estrellas { color: var(--dorado); font-size: 13px; white-space: nowrap; }
+  .resena-item .meta-linea {
+    font-size: 11px;
+    color: var(--texto-suave);
+    margin-bottom: 4px;
+  }
+  .resena-item .texto {
+    font-size: 13px;
+    color: var(--texto);
+    line-height: 1.4;
+  }
+  .resena-item.es-nueva { background: linear-gradient(90deg, var(--rosa-suave), transparent); border-radius: 8px; padding: 12px 10px; margin: 0 -10px 4px; }
+  .sin-resenas { font-size: 13px; color: var(--texto-suave); }
+
   .pendientes {
     background: var(--card-bg);
     border: 1px dashed var(--borde);
@@ -337,6 +380,14 @@
     <div class="chart-card">
       <div class="label">Embudo de conversión</div>
       <div id="embudo"></div>
+    </div>
+
+    <div class="chart-card" id="resenas-card">
+      <div class="label resenas-header">
+        Reseñas de clientas
+        <span class="resenas-badge" id="resenas-badge-nuevas" style="display:none;"></span>
+      </div>
+      <div id="resenas-lista"></div>
     </div>
 
     <div class="pendientes">
@@ -460,6 +511,51 @@
       "Última actualización: " + actualizado.toLocaleString("es-CO", { timeZone: "America/Bogota" }) + " (hora Medellín) — se refresca cada hora";
   }
 
+  function estrellasTexto(n) {
+    return "★".repeat(n) + "☆".repeat(5 - n);
+  }
+
+  function fechaCortaHora(fechaISO) {
+    return new Date(fechaISO).toLocaleString("es-CO", {
+      timeZone: "America/Bogota",
+      day: "2-digit",
+      month: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    });
+  }
+
+  function renderResenas() {
+    const resenas = DATOS?.resenas;
+    const badge = document.getElementById("resenas-badge-nuevas");
+    const lista = document.getElementById("resenas-lista");
+    if (!resenas || !resenas.items || resenas.items.length === 0) {
+      badge.style.display = "none";
+      lista.innerHTML = '<div class="sin-resenas">Todavía no hay reseñas.</div>';
+      return;
+    }
+
+    const nuevasUuids = new Set((resenas.nuevas || []).map((r) => r.uuid));
+    if (nuevasUuids.size > 0) {
+      badge.style.display = "inline-block";
+      badge.textContent = nuevasUuids.size === 1 ? "1 nueva" : `${nuevasUuids.size} nuevas`;
+    } else {
+      badge.style.display = "none";
+    }
+
+    lista.innerHTML = resenas.items.slice(0, 15).map((r) => {
+      const esNueva = nuevasUuids.has(r.uuid);
+      return `<div class="resena-item ${esNueva ? "es-nueva" : ""}">
+        <div class="fila-top">
+          <span class="producto">${esNueva ? "🆕 " : ""}${r.producto}</span>
+          <span class="estrellas">${estrellasTexto(r.calificacion)}</span>
+        </div>
+        <div class="meta-linea">${r.autor} · ${fechaCortaHora(r.fecha)}</div>
+        <div class="texto">${r.texto}</div>
+      </div>`;
+    }).join("");
+  }
+
   document.getElementById("filtros").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-dias]");
     if (!btn) return;
@@ -473,6 +569,7 @@
       const res = await fetch("./data.json?_=" + Date.now());
       DATOS = await res.json();
       renderRango();
+      renderResenas();
     } catch (e) {
       document.getElementById("actualizado").textContent = "No se pudo cargar data.json";
     }
