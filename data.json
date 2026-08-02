@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T19:12:57.387Z",
+  "updatedAt": "2026-08-02T20:57:28.194Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -446,18 +446,54 @@
       "carritosAbandonados": 3,
       "productoTop": null,
       "embudo": {
-        "visitas": 18,
-        "vioProducto": 78,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
+        "visitas": 24,
+        "vioProducto": 89,
+        "agregoCarrito": 2,
+        "iniciarCheckout": 7,
         "compras": 0
       }
     }
   ],
-  "ga4UpdatedAt": "2026-08-02T19:12:58.387Z",
+  "ga4UpdatedAt": "2026-08-02T20:57:29.031Z",
   "resenas": {
-    "updatedAt": "2026-08-02T19:13:51.934Z",
+    "updatedAt": "2026-08-02T20:58:14.398Z",
     "items": [
+      {
+        "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
+        "producto": "ILUMINADOR EN STICK SUBLIME ATENEA",
+        "productoHandle": "iluminador-en-stick-sublime-atenea-2",
+        "calificacion": 5,
+        "texto": "Le compré este iluminador a mi mamá y le encantó, se integra perfecto con la piel sin marcar textura. Y la compra fue súper fácil, rápida y sin ninguna complicación",
+        "autor": "Stiven Restrepo",
+        "fecha": "2026-08-02T19:46:15.642Z"
+      },
+      {
+        "uuid": "a9bb4559-3f50-4305-b0cd-5b0af1302caa",
+        "producto": "RUBOR CREMOSO EN BARRA ATENEA",
+        "productoHandle": "rubor-cremoso-en-barra-atenea-1",
+        "calificacion": 5,
+        "texto": "Me encanta el rubor , es súper cremoso y súper manejable!!. Seguiré comprando más",
+        "autor": "Danielarestrepo",
+        "fecha": "2026-08-02T19:42:33.070Z"
+      },
+      {
+        "uuid": "bfbb7c09-600b-46c6-892d-5fae4e4c3ec0",
+        "producto": "LAPIZ DELINEADOR LABIAL RETRACTIL #3",
+        "productoHandle": "lapiz-delineador-labial-retractil-3",
+        "calificacion": 5,
+        "texto": "El mejor producto me super encanto, y la atención mucho mejor ♥️La página muy fácil de manejar 💕💕💕",
+        "autor": "Míchel gaviria",
+        "fecha": "2026-08-02T19:41:46.195Z"
+      },
+      {
+        "uuid": "2a4542d5-a65b-48dd-8875-3512d546ba63",
+        "producto": "MINI POLVO SUELTO MATE NATURAL",
+        "productoHandle": "mini-polvo-suelto-mate-natural",
+        "calificacion": 5,
+        "texto": "Super bueno y no deja la piel pesada",
+        "autor": "Lrestrepo",
+        "fecha": "2026-08-02T19:39:45.992Z"
+      },
       {
         "uuid": "74ec14de-5bac-49f6-b91b-c7d41882058a",
         "producto": "MINI POLVO SUELTO MATE NATURAL",
@@ -551,49 +587,40 @@
     ],
     "nuevas": [
       {
-        "uuid": "74ec14de-5bac-49f6-b91b-c7d41882058a",
+        "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
+        "producto": "ILUMINADOR EN STICK SUBLIME ATENEA",
+        "productoHandle": "iluminador-en-stick-sublime-atenea-2",
+        "calificacion": 5,
+        "texto": "Le compré este iluminador a mi mamá y le encantó, se integra perfecto con la piel sin marcar textura. Y la compra fue súper fácil, rápida y sin ninguna complicación",
+        "autor": "Stiven Restrepo",
+        "fecha": "2026-08-02T19:46:15.642Z"
+      },
+      {
+        "uuid": "a9bb4559-3f50-4305-b0cd-5b0af1302caa",
+        "producto": "RUBOR CREMOSO EN BARRA ATENEA",
+        "productoHandle": "rubor-cremoso-en-barra-atenea-1",
+        "calificacion": 5,
+        "texto": "Me encanta el rubor , es súper cremoso y súper manejable!!. Seguiré comprando más",
+        "autor": "Danielarestrepo",
+        "fecha": "2026-08-02T19:42:33.070Z"
+      },
+      {
+        "uuid": "bfbb7c09-600b-46c6-892d-5fae4e4c3ec0",
+        "producto": "LAPIZ DELINEADOR LABIAL RETRACTIL #3",
+        "productoHandle": "lapiz-delineador-labial-retractil-3",
+        "calificacion": 5,
+        "texto": "El mejor producto me super encanto, y la atención mucho mejor ♥️La página muy fácil de manejar 💕💕💕",
+        "autor": "Míchel gaviria",
+        "fecha": "2026-08-02T19:41:46.195Z"
+      },
+      {
+        "uuid": "2a4542d5-a65b-48dd-8875-3512d546ba63",
         "producto": "MINI POLVO SUELTO MATE NATURAL",
         "productoHandle": "mini-polvo-suelto-mate-natural",
         "calificacion": 5,
-        "texto": "Súper buena calidad",
-        "autor": "Zapataluisa",
-        "fecha": "2026-08-02T19:07:26.105Z"
-      },
-      {
-        "uuid": "ffc09f4d-acc4-4c0e-9e29-1ba731d70f37",
-        "producto": "lip base esscence 2",
-        "productoHandle": "lip-base-esscence-2",
-        "calificacion": 5,
-        "texto": "Excelente producto me encanta!",
-        "autor": "Zapataluisa",
-        "fecha": "2026-08-02T19:07:05.622Z"
-      },
-      {
-        "uuid": "197126ad-0de0-4421-9cbb-b38330a1da63",
-        "producto": "LAPIZ DELINEADOR LABIAL RETRACTIL #4",
-        "productoHandle": "lapiz-delineador-labial-retractil-4",
-        "calificacion": 4,
-        "texto": "Excelentes productos, a mi esposa le encantaron ❤️",
-        "autor": "Jhonatancolorado",
-        "fecha": "2026-08-02T18:48:09.437Z"
-      },
-      {
-        "uuid": "add2724e-adf6-4ff5-9a5b-2829f5505a1b",
-        "producto": "RUBOR COMPACTO ALIS-SHA #3",
-        "productoHandle": "rubor-compacto-alis-sha-3",
-        "calificacion": 5,
-        "texto": "Superrr lindo y dura todoooo el día 😍😍",
-        "autor": "Jane",
-        "fecha": "2026-08-02T18:44:34.108Z"
-      },
-      {
-        "uuid": "f5d82e61-5bfe-4463-b7f1-fc2bca30fc32",
-        "producto": "Kit de Brochas Lula Bubblegum x 10 Und",
-        "productoHandle": "brochas-lula",
-        "calificacion": 5,
-        "texto": "La calidad de los productos es muy buena y lo mejor es su precio, 10/10. 🤩✨",
-        "autor": "Mariano Arango",
-        "fecha": "2026-08-02T18:44:03.309Z"
+        "texto": "Super bueno y no deja la piel pesada",
+        "autor": "Lrestrepo",
+        "fecha": "2026-08-02T19:39:45.992Z"
       }
     ]
   }
