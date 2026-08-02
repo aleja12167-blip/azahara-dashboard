@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-02T18:24:15.033Z",
+  "updatedAt": "2026-08-02T19:12:57.387Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -443,21 +443,66 @@
       "ventas": 0,
       "pedidos": 0,
       "ticketPromedio": 0,
-      "carritosAbandonados": 0,
+      "carritosAbandonados": 3,
       "productoTop": null,
       "embudo": {
-        "visitas": 13,
-        "vioProducto": 19,
+        "visitas": 18,
+        "vioProducto": 78,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
       }
     }
   ],
-  "ga4UpdatedAt": "2026-08-02T18:24:15.701Z",
+  "ga4UpdatedAt": "2026-08-02T19:12:58.387Z",
   "resenas": {
-    "updatedAt": "2026-08-02T18:24:59.491Z",
+    "updatedAt": "2026-08-02T19:13:51.934Z",
     "items": [
+      {
+        "uuid": "74ec14de-5bac-49f6-b91b-c7d41882058a",
+        "producto": "MINI POLVO SUELTO MATE NATURAL",
+        "productoHandle": "mini-polvo-suelto-mate-natural",
+        "calificacion": 5,
+        "texto": "Súper buena calidad",
+        "autor": "Zapataluisa",
+        "fecha": "2026-08-02T19:07:26.105Z"
+      },
+      {
+        "uuid": "ffc09f4d-acc4-4c0e-9e29-1ba731d70f37",
+        "producto": "lip base esscence 2",
+        "productoHandle": "lip-base-esscence-2",
+        "calificacion": 5,
+        "texto": "Excelente producto me encanta!",
+        "autor": "Zapataluisa",
+        "fecha": "2026-08-02T19:07:05.622Z"
+      },
+      {
+        "uuid": "197126ad-0de0-4421-9cbb-b38330a1da63",
+        "producto": "LAPIZ DELINEADOR LABIAL RETRACTIL #4",
+        "productoHandle": "lapiz-delineador-labial-retractil-4",
+        "calificacion": 4,
+        "texto": "Excelentes productos, a mi esposa le encantaron ❤️",
+        "autor": "Jhonatancolorado",
+        "fecha": "2026-08-02T18:48:09.437Z"
+      },
+      {
+        "uuid": "add2724e-adf6-4ff5-9a5b-2829f5505a1b",
+        "producto": "RUBOR COMPACTO ALIS-SHA #3",
+        "productoHandle": "rubor-compacto-alis-sha-3",
+        "calificacion": 5,
+        "texto": "Superrr lindo y dura todoooo el día 😍😍",
+        "autor": "Jane",
+        "fecha": "2026-08-02T18:44:34.108Z"
+      },
+      {
+        "uuid": "f5d82e61-5bfe-4463-b7f1-fc2bca30fc32",
+        "producto": "Kit de Brochas Lula Bubblegum x 10 Und",
+        "productoHandle": "brochas-lula",
+        "calificacion": 5,
+        "texto": "La calidad de los productos es muy buena y lo mejor es su precio, 10/10. 🤩✨",
+        "autor": "Mariano Arango",
+        "fecha": "2026-08-02T18:44:03.309Z"
+      },
       {
         "uuid": "9896925a-8128-4f9b-86ae-3e6016ce049d",
         "producto": "Paleta de sombras atenea victory",
@@ -506,49 +551,49 @@
     ],
     "nuevas": [
       {
-        "uuid": "9896925a-8128-4f9b-86ae-3e6016ce049d",
-        "producto": "Paleta de sombras atenea victory",
-        "productoHandle": "paleta-de-sobras-atenea-victory",
+        "uuid": "74ec14de-5bac-49f6-b91b-c7d41882058a",
+        "producto": "MINI POLVO SUELTO MATE NATURAL",
+        "productoHandle": "mini-polvo-suelto-mate-natural",
         "calificacion": 5,
-        "texto": "Muy bueno el producto",
-        "autor": "Anónimo",
-        "fecha": "2026-08-02T18:17:45.099Z"
+        "texto": "Súper buena calidad",
+        "autor": "Zapataluisa",
+        "fecha": "2026-08-02T19:07:26.105Z"
       },
       {
-        "uuid": "3b717eab-1821-41e6-ab56-9855c1d41e8c",
-        "producto": "CEPILLO SECADOR KERATINA DE KERATINA",
-        "productoHandle": "cepillo-secador-keratina-de-keratina",
+        "uuid": "ffc09f4d-acc4-4c0e-9e29-1ba731d70f37",
+        "producto": "lip base esscence 2",
+        "productoHandle": "lip-base-esscence-2",
         "calificacion": 5,
-        "texto": "Buen producto",
-        "autor": "Anónimo",
-        "fecha": "2026-08-02T18:08:51.486Z"
+        "texto": "Excelente producto me encanta!",
+        "autor": "Zapataluisa",
+        "fecha": "2026-08-02T19:07:05.622Z"
       },
       {
-        "uuid": "92b1f9eb-5e5f-4efe-b30e-dff6c6fc36c9",
-        "producto": "Pestañina Profesional Silicion Prosa GRIS",
-        "productoHandle": "pestanina-prosa-maxi-volumen-silicon-gris",
-        "calificacion": 5,
-        "texto": "Muy buena la atención",
-        "autor": "Anónimo",
-        "fecha": "2026-08-02T18:07:17.627Z"
+        "uuid": "197126ad-0de0-4421-9cbb-b38330a1da63",
+        "producto": "LAPIZ DELINEADOR LABIAL RETRACTIL #4",
+        "productoHandle": "lapiz-delineador-labial-retractil-4",
+        "calificacion": 4,
+        "texto": "Excelentes productos, a mi esposa le encantaron ❤️",
+        "autor": "Jhonatancolorado",
+        "fecha": "2026-08-02T18:48:09.437Z"
       },
       {
-        "uuid": "ccb9636e-1287-4984-aff7-38fa162e59e8",
-        "producto": "Brillo BLOOM SUBLIME XL",
-        "productoHandle": "brillo-bloom-sublime-xl",
+        "uuid": "add2724e-adf6-4ff5-9a5b-2829f5505a1b",
+        "producto": "RUBOR COMPACTO ALIS-SHA #3",
+        "productoHandle": "rubor-compacto-alis-sha-3",
         "calificacion": 5,
-        "texto": "Deja un brillo precioso",
-        "autor": "Alejandra Gómez",
-        "fecha": "2026-08-02T17:25:44.564Z"
+        "texto": "Superrr lindo y dura todoooo el día 😍😍",
+        "autor": "Jane",
+        "fecha": "2026-08-02T18:44:34.108Z"
       },
       {
-        "uuid": "2c099e62-e671-46ba-8743-a96d572edc9e",
-        "producto": "Brillo BLOOM SUBLIME XL",
-        "productoHandle": "brillo-bloom-sublime-xl",
+        "uuid": "f5d82e61-5bfe-4463-b7f1-fc2bca30fc32",
+        "producto": "Kit de Brochas Lula Bubblegum x 10 Und",
+        "productoHandle": "brochas-lula",
         "calificacion": 5,
-        "texto": "Me encanta el efecto que deja en lo labios y deja uno brillos hermosos",
-        "autor": "Anónimo",
-        "fecha": "2026-08-02T17:18:29.363Z"
+        "texto": "La calidad de los productos es muy buena y lo mejor es su precio, 10/10. 🤩✨",
+        "autor": "Mariano Arango",
+        "fecha": "2026-08-02T18:44:03.309Z"
       }
     ]
   }
