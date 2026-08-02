@@ -14,14 +14,26 @@ if (!STORE || !TOKEN) {
 
 const API_VERSION = "2024-01";
 
-async function shopifyGet(path) {
-  const res = await fetch(`https://${STORE}/admin/api/${API_VERSION}/${path}`, {
-    headers: { "X-Shopify-Access-Token": TOKEN },
-  });
-  if (!res.ok) {
-    throw new Error(`Shopify API ${path} -> ${res.status} ${await res.text()}`);
+function esperar(ms) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+async function shopifyGet(path, intentos = 5) {
+  for (let intento = 0; intento < intentos; intento++) {
+    const res = await fetch(`https://${STORE}/admin/api/${API_VERSION}/${path}`, {
+      headers: { "X-Shopify-Access-Token": TOKEN },
+    });
+    if (res.status === 429) {
+      const esperaSeg = parseFloat(res.headers.get("Retry-After")) || 1;
+      await esperar(esperaSeg * 1000 + 200);
+      continue;
+    }
+    if (!res.ok) {
+      throw new Error(`Shopify API ${path} -> ${res.status} ${await res.text()}`);
+    }
+    return res.json();
   }
-  return res.json();
+  throw new Error(`Shopify API ${path} -> agotados los reintentos por límite de tasa`);
 }
 
 function previousReviewUuids() {
@@ -44,6 +56,7 @@ async function main() {
   const todasLasResenas = [];
 
   for (const product of products) {
+    await esperar(550); // Shopify permite ~2 solicitudes/segundo
     const { metafields = [] } = await shopifyGet(
       `products/${product.id}/metafields.json?namespace=judgeme&key=review_widget_data`
     );
