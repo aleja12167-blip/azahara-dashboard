@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-20T18:41:01.221Z",
+  "updatedAt": "2026-08-20T19:32:53.803Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -447,16 +447,16 @@
       "productoTop": null,
       "embudo": {
         "visitas": 11,
-        "vioProducto": 5,
+        "vioProducto": 6,
         "agregoCarrito": 0,
         "iniciarCheckout": 3,
         "compras": 0
       }
     }
   ],
-  "ga4UpdatedAt": "2026-08-20T18:41:02.005Z",
+  "ga4UpdatedAt": "2026-08-20T19:32:54.820Z",
   "resenas": {
-    "updatedAt": "2026-08-20T18:41:57.834Z",
+    "updatedAt": "2026-08-20T19:33:49.634Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
@@ -523,7 +523,7 @@
       },
       {
         "uuid": "add2724e-adf6-4ff5-9a5b-2829f5505a1b",
-        "producto": "RUBOR COMPACTO ALIS-SHA #3",
+        "producto": "RUBOR COMPACTO ALISSHA BEAUTY #3",
         "productoHandle": "rubor-compacto-alis-sha-3",
         "calificacion": 5,
         "texto": "Superrr lindo y dura todoooo el día 😍😍",
