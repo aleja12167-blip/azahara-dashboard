@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24T01:23:19.029Z",
+  "updatedAt": "2026-08-24T03:04:45.884Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -449,14 +449,14 @@
         "visitas": 9,
         "vioProducto": 2,
         "agregoCarrito": 6,
-        "iniciarCheckout": 6,
+        "iniciarCheckout": 28,
         "compras": 0
       }
     }
   ],
-  "ga4UpdatedAt": "2026-08-24T01:23:19.913Z",
+  "ga4UpdatedAt": "2026-08-24T03:04:46.640Z",
   "resenas": {
-    "updatedAt": "2026-08-24T01:24:13.011Z",
+    "updatedAt": "2026-08-24T03:05:38.093Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
