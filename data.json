@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-25T18:41:10.111Z",
+  "updatedAt": "2026-08-25T19:33:06.210Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -440,11 +440,14 @@
     },
     {
       "fecha": "2026-08-25",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
+      "ventas": 68000,
+      "pedidos": 1,
+      "ticketPromedio": 68000,
       "carritosAbandonados": 0,
-      "productoTop": null,
+      "productoTop": {
+        "titulo": "FIJADOR DE MAQUILLAJE EN AEROSOL BLOOMSHELL",
+        "cantidad": 1
+      },
       "embudo": {
         "visitas": 0,
         "vioProducto": 0,
@@ -454,9 +457,9 @@
       }
     }
   ],
-  "ga4UpdatedAt": "2026-08-25T18:41:11.057Z",
+  "ga4UpdatedAt": "2026-08-25T19:33:07.211Z",
   "resenas": {
-    "updatedAt": "2026-08-25T18:42:04.407Z",
+    "updatedAt": "2026-08-25T19:34:01.278Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
