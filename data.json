@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-26T22:50:50.283Z",
+  "updatedAt": "2026-08-27T04:22:03.675Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -443,23 +443,26 @@
     },
     {
       "fecha": "2026-08-26",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
+      "ventas": 32500,
+      "pedidos": 1,
+      "ticketPromedio": 32500,
       "carritosAbandonados": 0,
-      "productoTop": null,
+      "productoTop": {
+        "titulo": "pestañina prosa maxi volumen silicon CAFÉ",
+        "cantidad": 1
+      },
       "embudo": {
         "visitas": 6,
         "vioProducto": 11,
-        "agregoCarrito": 1,
+        "agregoCarrito": 2,
         "iniciarCheckout": 1,
         "compras": 0
       }
     }
   ],
-  "ga4UpdatedAt": "2026-08-26T22:50:51.239Z",
+  "ga4UpdatedAt": "2026-08-27T04:22:04.602Z",
   "resenas": {
-    "updatedAt": "2026-08-26T22:51:46.946Z",
+    "updatedAt": "2026-08-27T04:22:58.144Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
