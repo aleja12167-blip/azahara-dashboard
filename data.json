@@ -1,23 +1,8 @@
 {
-  "updatedAt": "2026-08-31T01:09:50.908Z",
+  "updatedAt": "2026-08-31T08:16:08.692Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-08-01",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null,
-      "embudo": {
-        "visitas": 4,
-        "vioProducto": 0,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-08-02",
       "ventas": 0,
@@ -446,23 +431,41 @@
     },
     {
       "fecha": "2026-08-30",
+      "ventas": 32500,
+      "pedidos": 1,
+      "ticketPromedio": 32500,
+      "carritosAbandonados": 0,
+      "productoTop": {
+        "titulo": "pestañina prosa maxi volumen silicon CAFÉ",
+        "cantidad": 1
+      },
+      "embudo": {
+        "visitas": 7,
+        "vioProducto": 2,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-08-31",
       "ventas": 0,
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 3,
-        "vioProducto": 2,
+        "visitas": 0,
+        "vioProducto": 0,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
       }
     }
   ],
-  "ga4UpdatedAt": "2026-08-31T01:09:51.745Z",
+  "ga4UpdatedAt": "2026-08-31T08:16:09.740Z",
   "resenas": {
-    "updatedAt": "2026-08-31T01:10:44.834Z",
+    "updatedAt": "2026-08-31T08:17:04.834Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
@@ -475,7 +478,7 @@
       },
       {
         "uuid": "a9bb4559-3f50-4305-b0cd-5b0af1302caa",
-        "producto": "RUBOR CREMOSO EN BARRA ATENEA",
+        "producto": "Rubor cremoso en barra atenea",
         "productoHandle": "rubor-cremoso-en-barra-atenea-1",
         "calificacion": 5,
         "texto": "Me encanta el rubor , es súper cremoso y súper manejable!!. Seguiré comprando más",
@@ -529,7 +532,7 @@
       },
       {
         "uuid": "add2724e-adf6-4ff5-9a5b-2829f5505a1b",
-        "producto": "RUBOR COMPACTO ALISSHA BEAUTY #3",
+        "producto": "RUBOR COMPACTO ALIS-SHA #3",
         "productoHandle": "rubor-compacto-alis-sha-3",
         "calificacion": 5,
         "texto": "Superrr lindo y dura todoooo el día 😍😍",
