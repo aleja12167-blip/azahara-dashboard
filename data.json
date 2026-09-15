@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-15T22:12:34.923Z",
+  "updatedAt": "2026-09-15T22:16:41.101Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -466,15 +466,65 @@
       "embudo": {
         "visitas": 5,
         "vioProducto": 3,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
+        "agregoCarrito": 1,
+        "iniciarCheckout": 1,
         "compras": 0
       }
     }
   ],
-  "ga4UpdatedAt": "2026-09-15T22:12:35.812Z",
+  "pedidosRecientes": [
+    {
+      "numero": "#1009",
+      "cliente": "Elizabeth Hoyos",
+      "total": 33500,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Enviado",
+      "fecha": "2026-09-10T12:47:57-05:00"
+    },
+    {
+      "numero": "#1008",
+      "cliente": "Maryori LONDOÑO",
+      "total": 33500,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Enviado",
+      "fecha": "2026-09-07T15:30:22-05:00"
+    },
+    {
+      "numero": "#1007",
+      "cliente": "Isabella o Andrea Velez",
+      "total": 33500,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Enviado",
+      "fecha": "2026-09-02T15:04:04-05:00"
+    },
+    {
+      "numero": "#1006",
+      "cliente": "Manuela Cartagena Botero",
+      "total": 32500,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Enviado",
+      "fecha": "2026-08-30T23:18:53-05:00"
+    },
+    {
+      "numero": "#1005",
+      "cliente": "Soledad MONTOYA",
+      "total": 32500,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Enviado",
+      "fecha": "2026-08-26T21:40:09-05:00"
+    },
+    {
+      "numero": "#1004",
+      "cliente": "Sara Arboleda",
+      "total": 68000,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Enviado",
+      "fecha": "2026-08-25T14:30:21-05:00"
+    }
+  ],
+  "ga4UpdatedAt": "2026-09-15T22:16:41.823Z",
   "resenas": {
-    "updatedAt": "2026-09-15T22:13:29.138Z",
+    "updatedAt": "2026-09-15T22:17:37.769Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
