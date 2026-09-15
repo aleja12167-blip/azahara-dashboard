@@ -79,6 +79,38 @@ async function main() {
 
   const moneda = paidOrders[0]?.currency || "COP";
 
+  const ESTADOS_PAGO = {
+    pending: "Pendiente",
+    authorized: "Autorizado",
+    partially_paid: "Pago parcial",
+    paid: "Pagado",
+    partially_refunded: "Reembolso parcial",
+    refunded: "Reembolsado",
+    voided: "Anulado",
+  };
+  const ESTADOS_ENVIO = {
+    fulfilled: "Enviado",
+    partial: "Envío parcial",
+    restocked: "Reabastecido",
+  };
+
+  const pedidosRecientes = [...orders]
+    .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+    .slice(0, 15)
+    .map((o) => {
+      const cliente = o.customer
+        ? `${o.customer.first_name || ""} ${o.customer.last_name || ""}`.trim() || o.customer.email
+        : o.email || o.contact_email || "Cliente sin nombre";
+      return {
+        numero: o.name,
+        cliente,
+        total: parseFloat(o.current_total_price || o.total_price || 0),
+        estadoPago: o.cancelled_at ? "Anulado" : (ESTADOS_PAGO[o.financial_status] || o.financial_status || "—"),
+        estadoEnvio: o.cancelled_at ? "Cancelado" : (ESTADOS_ENVIO[o.fulfillment_status] || "Sin enviar"),
+        fecha: o.created_at,
+      };
+    });
+
   const diasFinal = dias.map((d) => {
     let productoTop = null;
     let maxQty = 0;
@@ -103,6 +135,7 @@ async function main() {
     timezone: "America/Bogota",
     moneda,
     dias: diasFinal,
+    pedidosRecientes,
   };
 
   console.log(JSON.stringify(data, null, 2));

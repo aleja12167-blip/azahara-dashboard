@@ -286,6 +286,35 @@
   .resena-item.es-nueva { background: linear-gradient(90deg, var(--rosa-suave), transparent); border-radius: 8px; padding: 12px 10px; margin: 0 -10px 4px; }
   .sin-resenas { font-size: 13px; color: var(--texto-suave); }
 
+  .pedido-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid var(--borde);
+    padding: 10px 0;
+  }
+  .pedido-item:last-child { border-bottom: none; }
+  .pedido-item .info { display: flex; flex-direction: column; gap: 2px; }
+  .pedido-item .numero { font-weight: 700; font-size: 13px; }
+  .pedido-item .cliente { color: var(--texto-suave); font-size: 11px; }
+  .pedido-item .der { text-align: right; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .pedido-item .total { font-weight: 700; font-size: 13px; }
+  .pedido-badges { display: flex; gap: 4px; flex-wrap: wrap; justify-content: flex-end; }
+  .badge-estado {
+    font-size: 10px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    white-space: nowrap;
+  }
+  .badge-pagado { background: #E4F4E9; color: #2F8F5B; }
+  .badge-pendiente { background: #FDF0DC; color: #B5791A; }
+  .badge-cancelado { background: #FBE3E6; color: #C0455A; }
+  .badge-enviado { background: #E4F0FB; color: #2F6FB5; }
+  .badge-sinenviar { background: var(--rosa-suave); color: var(--texto-suave); }
+  .sin-pedidos { font-size: 13px; color: var(--texto-suave); }
+
   .pendientes {
     background: var(--card-bg);
     border: 1px dashed var(--borde);
@@ -380,6 +409,11 @@
     <div class="chart-card">
       <div class="label">Embudo de conversión</div>
       <div id="embudo"></div>
+    </div>
+
+    <div class="chart-card" id="pedidos-card">
+      <div class="label">Pedidos recientes</div>
+      <div id="pedidos-lista"></div>
     </div>
 
     <div class="chart-card" id="resenas-card">
@@ -556,6 +590,41 @@
     }).join("");
   }
 
+  function estadoPagoClase(estado) {
+    if (estado === "Pagado") return "badge-pagado";
+    if (estado === "Reembolsado" || estado === "Anulado" || estado === "Reembolso parcial") return "badge-cancelado";
+    return "badge-pendiente";
+  }
+  function estadoEnvioClase(estado) {
+    if (estado === "Enviado") return "badge-enviado";
+    if (estado === "Cancelado") return "badge-cancelado";
+    return "badge-sinenviar";
+  }
+
+  function renderPedidos() {
+    const lista = document.getElementById("pedidos-lista");
+    const pedidos = DATOS?.pedidosRecientes;
+    if (!pedidos || pedidos.length === 0) {
+      lista.innerHTML = '<div class="sin-pedidos">Todavía no hay pedidos.</div>';
+      return;
+    }
+    lista.innerHTML = pedidos.map((p) => `
+      <div class="pedido-item">
+        <div class="info">
+          <span class="numero">${p.numero}</span>
+          <span class="cliente">${p.cliente} · ${fechaCortaHora(p.fecha)}</span>
+        </div>
+        <div class="der">
+          <span class="total">${formatoCOP(p.total)}</span>
+          <div class="pedido-badges">
+            <span class="badge-estado ${estadoPagoClase(p.estadoPago)}">${p.estadoPago}</span>
+            <span class="badge-estado ${estadoEnvioClase(p.estadoEnvio)}">${p.estadoEnvio}</span>
+          </div>
+        </div>
+      </div>
+    `).join("");
+  }
+
   document.getElementById("filtros").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-dias]");
     if (!btn) return;
@@ -569,6 +638,7 @@
       const res = await fetch("./data.json?_=" + Date.now());
       DATOS = await res.json();
       renderRango();
+      renderPedidos();
       renderResenas();
     } catch (e) {
       document.getElementById("actualizado").textContent = "No se pudo cargar data.json";
