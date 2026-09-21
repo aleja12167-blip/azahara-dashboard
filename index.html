@@ -286,6 +286,27 @@
   .resena-item.es-nueva { background: linear-gradient(90deg, var(--rosa-suave), transparent); border-radius: 8px; padding: 12px 10px; margin: 0 -10px 4px; }
   .sin-resenas { font-size: 13px; color: var(--texto-suave); }
 
+  .encuesta-resumen {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+  }
+  .encuesta-promedio { text-align: center; min-width: 84px; }
+  .encuesta-promedio .num { font-size: 32px; font-weight: 700; line-height: 1.1; }
+  .encuesta-promedio .estrellas { color: var(--dorado); font-size: 14px; }
+  .encuesta-promedio .sub { font-size: 11px; color: var(--texto-suave); }
+  .encuesta-barras { flex: 1; min-width: 160px; }
+  .barra-fila { display: flex; align-items: center; gap: 8px; font-size: 11px; color: var(--texto-suave); margin: 3px 0; }
+  .barra-fila .riel { flex: 1; height: 8px; background: var(--rosa-suave); border-radius: 999px; overflow: hidden; }
+  .barra-fila .relleno { height: 100%; background: var(--rosa-fuerte); border-radius: 999px; }
+  .barra-fila .cant { width: 20px; text-align: right; }
+  .encuesta-origenes { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 8px; }
+  .origen-chip { font-size: 11px; background: var(--rosa-suave); border: 1px solid var(--borde); border-radius: 999px; padding: 3px 10px; color: var(--texto); }
+  .encuesta-sub { font-size: 12px; color: var(--texto-suave); margin: 14px 0 2px; font-weight: 600; }
+  .resena-item .sub-etiqueta { font-size: 11px; color: var(--texto-suave); font-weight: 600; margin-top: 6px; }
+
   .pedido-item {
     display: flex;
     justify-content: space-between;
@@ -422,6 +443,14 @@
         <span class="resenas-badge" id="resenas-badge-nuevas" style="display:none;"></span>
       </div>
       <div id="resenas-lista"></div>
+    </div>
+
+    <div class="chart-card" id="encuesta-card">
+      <div class="label resenas-header">
+        Encuesta de satisfacción
+        <span class="resenas-badge" id="encuesta-badge" style="display:none;"></span>
+      </div>
+      <div id="encuesta-contenido"><div class="sin-resenas">Cargando…</div></div>
     </div>
 
     <div class="pendientes">
@@ -633,6 +662,75 @@
     renderRango();
   });
 
+  const ENCUESTA_URL = "https://azahara-encuesta.aleja1216g-l.workers.dev";
+
+  // Los textos de la encuesta los escriben las clientas: siempre se escapan antes de mostrarse.
+  function esc(t) {
+    return String(t ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+  }
+
+  async function cargarEncuesta() {
+    const cont = document.getElementById("encuesta-contenido");
+    const badge = document.getElementById("encuesta-badge");
+    try {
+      const [rRes, rCom] = await Promise.all([
+        fetch(ENCUESTA_URL + "/resultados", { cache: "no-store" }),
+        fetch(ENCUESTA_URL + "/comentarios", { cache: "no-store" }),
+      ]);
+      if (!rRes.ok || !rCom.ok) throw new Error("http");
+      const res = await rRes.json();
+      const com = await rCom.json();
+
+      if (!res.total) {
+        badge.style.display = "none";
+        cont.innerHTML = '<div class="sin-resenas">Todavía no hay respuestas a la encuesta.</div>';
+        return;
+      }
+      badge.style.display = "inline-block";
+      badge.textContent = res.total === 1 ? "1 respuesta" : `${res.total} respuestas`;
+
+      const maxDist = Math.max(1, ...[1, 2, 3, 4, 5].map((n) => res.distribucion[n] || 0));
+      const barras = [5, 4, 3, 2, 1].map((n) => {
+        const c = res.distribucion[n] || 0;
+        return `<div class="barra-fila"><span>${n}★</span><div class="riel"><div class="relleno" style="width:${(c / maxDist) * 100}%"></div></div><span class="cant">${c}</span></div>`;
+      }).join("");
+
+      const origenes = Object.entries(res.porOrigen || {})
+        .sort((a, b) => b[1] - a[1])
+        .map(([o, c]) => `<span class="origen-chip">${esc(o)} · ${c}</span>`).join("");
+
+      const items = (com.items || []).map((r) => {
+        const origen = r.origen === "Otro" && r.origenOtro ? `Otro: ${r.origenOtro}` : r.origen;
+        return `<div class="resena-item">
+          <div class="fila-top">
+            <span class="producto">${esc(origen)}</span>
+            <span class="estrellas">${estrellasTexto(r.calificacion)}</span>
+          </div>
+          <div class="meta-linea">${fechaCortaHora(r.fecha)}</div>
+          ${r.resena ? `<div class="sub-etiqueta">Sobre su producto</div><div class="texto">${esc(r.resena)}</div>` : ""}
+          ${r.mejora ? `<div class="sub-etiqueta">Sobre el servicio y cómo mejorar</div><div class="texto">${esc(r.mejora)}</div>` : ""}
+        </div>`;
+      }).join("");
+
+      cont.innerHTML = `
+        <div class="encuesta-resumen">
+          <div class="encuesta-promedio">
+            <div class="num">${Number(res.promedio).toFixed(1).replace(".", ",")}</div>
+            <div class="estrellas">${estrellasTexto(Math.round(res.promedio))}</div>
+            <div class="sub">promedio</div>
+          </div>
+          <div class="encuesta-barras">${barras}</div>
+        </div>
+        <div class="encuesta-sub">¿Dónde nos encontraron?</div>
+        <div class="encuesta-origenes">${origenes}</div>
+        <div class="encuesta-sub">Lo que escribieron</div>
+        ${items || '<div class="sin-resenas">Nadie ha escrito comentarios todavía.</div>'}`;
+    } catch (e) {
+      badge.style.display = "none";
+      cont.innerHTML = '<div class="sin-resenas">No se pudo cargar la encuesta. Intenta recargar.</div>';
+    }
+  }
+
   async function cargarDatos() {
     try {
       const res = await fetch("./data.json?_=" + Date.now());
@@ -640,6 +738,7 @@
       renderRango();
       renderPedidos();
       renderResenas();
+      cargarEncuesta();
     } catch (e) {
       document.getElementById("actualizado").textContent = "No se pudo cargar data.json";
     }
