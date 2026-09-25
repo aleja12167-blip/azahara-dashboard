@@ -1,26 +1,8 @@
 {
-  "updatedAt": "2026-09-25T01:12:55.236Z",
+  "updatedAt": "2026-09-25T07:17:16.650Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-08-26",
-      "ventas": 32500,
-      "pedidos": 1,
-      "ticketPromedio": 32500,
-      "carritosAbandonados": 0,
-      "productoTop": {
-        "titulo": "pestañina prosa maxi volumen silicon CAFÉ",
-        "cantidad": 1
-      },
-      "embudo": {
-        "visitas": 8,
-        "vioProducto": 12,
-        "agregoCarrito": 2,
-        "iniciarCheckout": 1,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-08-27",
       "ventas": 0,
@@ -461,8 +443,23 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 10,
-        "vioProducto": 11,
+        "visitas": 17,
+        "vioProducto": 19,
+        "agregoCarrito": 2,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-09-25",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
@@ -509,19 +506,11 @@
       "estadoPago": "Pagado",
       "estadoEnvio": "Enviado",
       "fecha": "2026-08-26T21:40:09-05:00"
-    },
-    {
-      "numero": "#1004",
-      "cliente": "Sara Arboleda",
-      "total": 68000,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-08-25T14:30:21-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-09-25T01:12:56.291Z",
+  "ga4UpdatedAt": "2026-09-25T07:17:17.504Z",
   "resenas": {
-    "updatedAt": "2026-09-25T01:13:52.027Z",
+    "updatedAt": "2026-09-25T07:18:10.421Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
