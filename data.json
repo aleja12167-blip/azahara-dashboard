@@ -1,23 +1,8 @@
 {
-  "updatedAt": "2026-09-30T00:06:30.189Z",
+  "updatedAt": "2026-09-30T06:21:32.630Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-08-31",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null,
-      "embudo": {
-        "visitas": 2,
-        "vioProducto": 4,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-09-01",
       "ventas": 0,
@@ -455,8 +440,23 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 7,
-        "vioProducto": 6,
+        "visitas": 15,
+        "vioProducto": 10,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-09-30",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
@@ -487,19 +487,11 @@
       "estadoPago": "Pagado",
       "estadoEnvio": "Enviado",
       "fecha": "2026-09-02T15:04:04-05:00"
-    },
-    {
-      "numero": "#1006",
-      "cliente": "Manuela Cartagena Botero",
-      "total": 32500,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-08-30T23:18:53-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-09-30T00:06:35.308Z",
+  "ga4UpdatedAt": "2026-09-30T06:21:33.577Z",
   "resenas": {
-    "updatedAt": "2026-09-30T00:07:30.847Z",
+    "updatedAt": "2026-09-30T06:22:26.919Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
