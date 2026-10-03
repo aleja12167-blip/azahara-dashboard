@@ -1,23 +1,8 @@
 {
-  "updatedAt": "2026-10-03T00:13:31.258Z",
+  "updatedAt": "2026-10-03T06:08:42.001Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-09-03",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null,
-      "embudo": {
-        "visitas": 8,
-        "vioProducto": 4,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-09-04",
       "ventas": 0,
@@ -449,11 +434,26 @@
       "ventas": 0,
       "pedidos": 0,
       "ticketPromedio": 0,
+      "carritosAbandonados": 1,
+      "productoTop": null,
+      "embudo": {
+        "visitas": 14,
+        "vioProducto": 24,
+        "agregoCarrito": 10,
+        "iniciarCheckout": 2,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-10-03",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 8,
-        "vioProducto": 5,
+        "visitas": 0,
+        "vioProducto": 0,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
@@ -476,19 +476,11 @@
       "estadoPago": "Pagado",
       "estadoEnvio": "Enviado",
       "fecha": "2026-09-07T15:30:22-05:00"
-    },
-    {
-      "numero": "#1007",
-      "cliente": "Isabella o Andrea Velez",
-      "total": 33500,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-09-02T15:04:04-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-10-03T00:13:32.449Z",
+  "ga4UpdatedAt": "2026-10-03T06:08:42.831Z",
   "resenas": {
-    "updatedAt": "2026-10-03T00:14:25.722Z",
+    "updatedAt": "2026-10-03T06:09:35.554Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
