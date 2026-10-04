@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-04T15:45:19.126Z",
+  "updatedAt": "2026-10-04T19:17:39.453Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -449,21 +449,40 @@
     },
     {
       "fecha": "2026-10-04",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
+      "ventas": 84000,
+      "pedidos": 2,
+      "ticketPromedio": 42000,
       "carritosAbandonados": 0,
-      "productoTop": null,
+      "productoTop": {
+        "titulo": "Bloom oil control cream Bloomshell",
+        "cantidad": 1
+      },
       "embudo": {
-        "visitas": 2,
-        "vioProducto": 1,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
+        "visitas": 7,
+        "vioProducto": 14,
+        "agregoCarrito": 4,
+        "iniciarCheckout": 2,
+        "compras": 1
       }
     }
   ],
   "pedidosRecientes": [
+    {
+      "numero": "#1012",
+      "cliente": "María Fernanda Largo",
+      "total": 39000,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Sin enviar",
+      "fecha": "2026-10-04T12:15:00-05:00"
+    },
+    {
+      "numero": "#1011",
+      "cliente": "DIANA CAROLINA Acevedo Gómez",
+      "total": 45000,
+      "estadoPago": "Pendiente",
+      "estadoEnvio": "Sin enviar",
+      "fecha": "2026-10-04T11:45:40-05:00"
+    },
     {
       "numero": "#1010",
       "cliente": "Anabel ROJAS",
@@ -489,9 +508,9 @@
       "fecha": "2026-09-07T15:30:22-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-10-04T15:45:20.187Z",
+  "ga4UpdatedAt": "2026-10-04T19:17:40.441Z",
   "resenas": {
-    "updatedAt": "2026-10-04T15:46:12.118Z",
+    "updatedAt": "2026-10-04T19:18:34.581Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
