@@ -1,23 +1,8 @@
 {
-  "updatedAt": "2026-10-08T00:46:22.935Z",
+  "updatedAt": "2026-10-08T07:04:19.609Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-09-08",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null,
-      "embudo": {
-        "visitas": 22,
-        "vioProducto": 22,
-        "agregoCarrito": 2,
-        "iniciarCheckout": 0,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-09-09",
       "ventas": 0,
@@ -452,11 +437,26 @@
       "ventas": 0,
       "pedidos": 0,
       "ticketPromedio": 0,
+      "carritosAbandonados": 2,
+      "productoTop": null,
+      "embudo": {
+        "visitas": 25,
+        "vioProducto": 17,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 4,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-10-08",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 17,
-        "vioProducto": 13,
+        "visitas": 4,
+        "vioProducto": 4,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
@@ -495,19 +495,11 @@
       "estadoPago": "Pagado",
       "estadoEnvio": "Enviado",
       "fecha": "2026-09-10T12:47:57-05:00"
-    },
-    {
-      "numero": "#1008",
-      "cliente": "Maryori LONDOÑO",
-      "total": 33500,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-09-07T15:30:22-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-10-08T00:46:23.727Z",
+  "ga4UpdatedAt": "2026-10-08T07:04:20.812Z",
   "resenas": {
-    "updatedAt": "2026-10-08T00:47:16.305Z",
+    "updatedAt": "2026-10-08T07:05:15.671Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
