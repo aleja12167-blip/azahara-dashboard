@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09T15:53:40.136Z",
+  "updatedAt": "2026-10-09T20:37:38.963Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -449,14 +449,17 @@
     },
     {
       "fecha": "2026-10-09",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
+      "ventas": 31000,
+      "pedidos": 1,
+      "ticketPromedio": 31000,
       "carritosAbandonados": 0,
-      "productoTop": null,
+      "productoTop": {
+        "titulo": "Brocha Pink Brush Rubor y Contorno Alma Beauty",
+        "cantidad": 1
+      },
       "embudo": {
-        "visitas": 3,
-        "vioProducto": 0,
+        "visitas": 5,
+        "vioProducto": 2,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
@@ -464,6 +467,14 @@
     }
   ],
   "pedidosRecientes": [
+    {
+      "numero": "#1013",
+      "cliente": "Evelyn Hernández",
+      "total": 31000,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Sin enviar",
+      "fecha": "2026-10-09T14:55:16-05:00"
+    },
     {
       "numero": "#1012",
       "cliente": "María Fernanda Largo",
@@ -497,9 +508,9 @@
       "fecha": "2026-09-10T12:47:57-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-10-09T15:53:41.271Z",
+  "ga4UpdatedAt": "2026-10-09T20:37:39.913Z",
   "resenas": {
-    "updatedAt": "2026-10-09T15:54:36.545Z",
+    "updatedAt": "2026-10-09T20:38:34.646Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
