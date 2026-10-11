@@ -1,23 +1,8 @@
 {
-  "updatedAt": "2026-10-11T01:37:10.516Z",
+  "updatedAt": "2026-10-11T08:25:35.465Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-09-11",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null,
-      "embudo": {
-        "visitas": 17,
-        "vioProducto": 11,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-09-12",
       "ventas": 0,
@@ -455,8 +440,23 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 20,
-        "vioProducto": 10,
+        "visitas": 23,
+        "vioProducto": 12,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-10-11",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null,
+      "embudo": {
+        "visitas": 1,
+        "vioProducto": 4,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
@@ -495,19 +495,11 @@
       "estadoPago": "Pagado",
       "estadoEnvio": "Sin enviar",
       "fecha": "2026-10-03T12:19:40-05:00"
-    },
-    {
-      "numero": "#1009",
-      "cliente": "Elizabeth Hoyos",
-      "total": 33500,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-09-10T12:47:57-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-10-11T01:37:11.528Z",
+  "ga4UpdatedAt": "2026-10-11T08:25:36.262Z",
   "resenas": {
-    "updatedAt": "2026-10-11T01:38:07.143Z",
+    "updatedAt": "2026-10-11T08:26:29.406Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
