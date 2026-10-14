@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-14T23:01:32.075Z",
+  "updatedAt": "2026-10-14T23:12:38.556Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -472,7 +472,7 @@
       "cliente": "Miguel Alejandro Bernal Mojica",
       "total": 50000,
       "estadoPago": "Pagado",
-      "estadoEnvio": "Sin enviar",
+      "estadoEnvio": "Enviado",
       "fecha": "2026-10-14T11:18:27-05:00"
     },
     {
@@ -480,7 +480,7 @@
       "cliente": "Evelyn Hernández",
       "total": 31000,
       "estadoPago": "Pagado",
-      "estadoEnvio": "Sin enviar",
+      "estadoEnvio": "Enviado",
       "fecha": "2026-10-09T14:55:16-05:00"
     },
     {
@@ -508,9 +508,9 @@
       "fecha": "2026-10-03T12:19:40-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-10-14T23:01:33.004Z",
+  "ga4UpdatedAt": "2026-10-14T23:12:39.417Z",
   "resenas": {
-    "updatedAt": "2026-10-14T23:02:28.290Z",
+    "updatedAt": "2026-10-14T23:13:31.684Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
