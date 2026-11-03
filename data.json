@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-03T15:56:19.073Z",
+  "updatedAt": "2026-11-03T21:37:33.985Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -446,21 +446,32 @@
     },
     {
       "fecha": "2026-11-03",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
+      "ventas": 98000,
+      "pedidos": 1,
+      "ticketPromedio": 98000,
       "carritosAbandonados": 0,
-      "productoTop": null,
+      "productoTop": {
+        "titulo": "Combo Rutina Cara Limpia Bloomshell",
+        "cantidad": 1
+      },
       "embudo": {
-        "visitas": 1,
-        "vioProducto": 0,
+        "visitas": 3,
+        "vioProducto": 4,
         "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
+        "iniciarCheckout": 2,
+        "compras": 1
       }
     }
   ],
   "pedidosRecientes": [
+    {
+      "numero": "#1015",
+      "cliente": "Paola Sandoval",
+      "total": 98000,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Sin enviar",
+      "fecha": "2026-11-03T11:26:28-05:00"
+    },
     {
       "numero": "#1014",
       "cliente": "Miguel Alejandro Bernal Mojica",
@@ -494,9 +505,9 @@
       "fecha": "2026-10-04T11:45:40-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-11-03T15:56:19.876Z",
+  "ga4UpdatedAt": "2026-11-03T21:37:35.153Z",
   "resenas": {
-    "updatedAt": "2026-11-03T15:57:45.145Z",
+    "updatedAt": "2026-11-03T21:38:38.127Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
