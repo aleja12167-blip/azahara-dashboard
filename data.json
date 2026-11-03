@@ -1,26 +1,8 @@
 {
-  "updatedAt": "2026-11-03T00:50:49.253Z",
+  "updatedAt": "2026-11-03T07:40:36.430Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-10-04",
-      "ventas": 84000,
-      "pedidos": 2,
-      "ticketPromedio": 42000,
-      "carritosAbandonados": 0,
-      "productoTop": {
-        "titulo": "Bloom oil control cream Bloomshell",
-        "cantidad": 1
-      },
-      "embudo": {
-        "visitas": 23,
-        "vioProducto": 26,
-        "agregoCarrito": 6,
-        "iniciarCheckout": 2,
-        "compras": 1
-      }
-    },
     {
       "fecha": "2026-10-05",
       "ventas": 0,
@@ -455,7 +437,22 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 2,
+        "visitas": 6,
+        "vioProducto": 4,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-11-03",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
         "vioProducto": 0,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
@@ -495,19 +492,11 @@
       "estadoPago": "Pagado",
       "estadoEnvio": "Enviado",
       "fecha": "2026-10-04T11:45:40-05:00"
-    },
-    {
-      "numero": "#1010",
-      "cliente": "Anabel ROJAS",
-      "total": 33500,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-10-03T12:19:40-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-11-03T00:50:50.269Z",
+  "ga4UpdatedAt": "2026-11-03T07:40:37.326Z",
   "resenas": {
-    "updatedAt": "2026-11-03T00:51:53.160Z",
+    "updatedAt": "2026-11-03T07:41:37.902Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
