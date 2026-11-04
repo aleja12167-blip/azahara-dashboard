@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-04T08:57:10.237Z",
+  "updatedAt": "2026-11-04T17:00:57.485Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -489,9 +489,9 @@
       "fecha": "2026-10-09T14:55:16-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-11-04T08:57:11.220Z",
+  "ga4UpdatedAt": "2026-11-04T17:01:00.102Z",
   "resenas": {
-    "updatedAt": "2026-11-04T08:58:12.788Z",
+    "updatedAt": "2026-11-04T17:02:02.220Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
