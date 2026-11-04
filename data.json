@@ -1,23 +1,8 @@
 {
-  "updatedAt": "2026-11-04T01:57:58.984Z",
+  "updatedAt": "2026-11-04T08:57:10.237Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-10-05",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null,
-      "embudo": {
-        "visitas": 5,
-        "vioProducto": 2,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-10-06",
       "ventas": 0,
@@ -461,6 +446,21 @@
         "iniciarCheckout": 2,
         "compras": 1
       }
+    },
+    {
+      "fecha": "2026-11-04",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
     }
   ],
   "pedidosRecientes": [
@@ -487,27 +487,11 @@
       "estadoPago": "Pagado",
       "estadoEnvio": "Enviado",
       "fecha": "2026-10-09T14:55:16-05:00"
-    },
-    {
-      "numero": "#1012",
-      "cliente": "María Fernanda Largo",
-      "total": 39000,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-10-04T12:15:00-05:00"
-    },
-    {
-      "numero": "#1011",
-      "cliente": "DIANA CAROLINA Acevedo Gómez",
-      "total": 45000,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-10-04T11:45:40-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-11-04T01:57:59.948Z",
+  "ga4UpdatedAt": "2026-11-04T08:57:11.220Z",
   "resenas": {
-    "updatedAt": "2026-11-04T01:59:00.178Z",
+    "updatedAt": "2026-11-04T08:58:12.788Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
