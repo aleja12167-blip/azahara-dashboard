@@ -1,23 +1,8 @@
 {
-  "updatedAt": "2026-11-08T23:27:48.204Z",
+  "updatedAt": "2026-11-09T05:10:09.575Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-10-10",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null,
-      "embudo": {
-        "visitas": 23,
-        "vioProducto": 12,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-10-11",
       "ventas": 0,
@@ -452,8 +437,23 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 5,
-        "vioProducto": 1,
+        "visitas": 12,
+        "vioProducto": 6,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-11-09",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
@@ -476,19 +476,11 @@
       "estadoPago": "Pagado",
       "estadoEnvio": "Enviado",
       "fecha": "2026-10-14T11:18:27-05:00"
-    },
-    {
-      "numero": "#1013",
-      "cliente": "Evelyn Hernández",
-      "total": 31000,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-10-09T14:55:16-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-11-08T23:27:49.029Z",
+  "ga4UpdatedAt": "2026-11-09T05:10:10.467Z",
   "resenas": {
-    "updatedAt": "2026-11-08T23:28:50.670Z",
+    "updatedAt": "2026-11-09T05:11:09.776Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
