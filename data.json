@@ -1,23 +1,8 @@
 {
-  "updatedAt": "2026-11-14T02:00:05.938Z",
+  "updatedAt": "2026-11-14T08:53:31.117Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-10-15",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null,
-      "embudo": {
-        "visitas": 3,
-        "vioProducto": 4,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-10-16",
       "ventas": 0,
@@ -443,21 +428,47 @@
     },
     {
       "fecha": "2026-11-13",
+      "ventas": 61000,
+      "pedidos": 1,
+      "ticketPromedio": 61000,
+      "carritosAbandonados": 0,
+      "productoTop": {
+        "titulo": "Brocha Pink Brush Rubor y Contorno Alma Beauty",
+        "cantidad": 1
+      },
+      "embudo": {
+        "visitas": 9,
+        "vioProducto": 6,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 2,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-11-14",
       "ventas": 0,
       "pedidos": 0,
       "ticketPromedio": 0,
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 6,
-        "vioProducto": 6,
+        "visitas": 0,
+        "vioProducto": 0,
         "agregoCarrito": 0,
-        "iniciarCheckout": 2,
+        "iniciarCheckout": 0,
         "compras": 0
       }
     }
   ],
   "pedidosRecientes": [
+    {
+      "numero": "#1016",
+      "cliente": "Olga Biviana Bedoya Rua",
+      "total": 61000,
+      "estadoPago": "Pagado",
+      "estadoEnvio": "Sin enviar",
+      "fecha": "2026-11-13T22:10:43-05:00"
+    },
     {
       "numero": "#1015",
       "cliente": "Paola Sandoval",
@@ -465,19 +476,11 @@
       "estadoPago": "Pagado",
       "estadoEnvio": "Sin enviar",
       "fecha": "2026-11-03T11:26:28-05:00"
-    },
-    {
-      "numero": "#1014",
-      "cliente": "Miguel Alejandro Bernal Mojica",
-      "total": 50000,
-      "estadoPago": "Pagado",
-      "estadoEnvio": "Enviado",
-      "fecha": "2026-10-14T11:18:27-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-11-14T02:00:07.012Z",
+  "ga4UpdatedAt": "2026-11-14T08:53:32.020Z",
   "resenas": {
-    "updatedAt": "2026-11-14T02:01:10.245Z",
+    "updatedAt": "2026-11-14T08:54:32.814Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
