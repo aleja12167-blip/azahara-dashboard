@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-18T20:07:38.901Z",
+  "updatedAt": "2026-11-19T02:20:44.426Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -455,10 +455,10 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 2,
-        "vioProducto": 2,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
+        "visitas": 8,
+        "vioProducto": 5,
+        "agregoCarrito": 2,
+        "iniciarCheckout": 2,
         "compras": 0
       }
     }
@@ -489,9 +489,9 @@
       "fecha": "2026-11-03T11:26:28-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-11-18T20:07:40.245Z",
+  "ga4UpdatedAt": "2026-11-19T02:20:45.407Z",
   "resenas": {
-    "updatedAt": "2026-11-18T20:08:43.472Z",
+    "updatedAt": "2026-11-19T02:21:46.678Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
