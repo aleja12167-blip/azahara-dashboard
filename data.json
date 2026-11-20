@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-11-19T20:07:59.532Z",
+  "updatedAt": "2026-11-20T02:03:36.812Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
@@ -455,8 +455,8 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 3,
-        "vioProducto": 4,
+        "visitas": 6,
+        "vioProducto": 8,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
@@ -489,9 +489,9 @@
       "fecha": "2026-11-03T11:26:28-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-11-19T20:08:00.724Z",
+  "ga4UpdatedAt": "2026-11-20T02:03:38.021Z",
   "resenas": {
-    "updatedAt": "2026-11-19T20:09:02.077Z",
+    "updatedAt": "2026-11-20T02:04:39.101Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
@@ -573,15 +573,6 @@
         "texto": "La calidad de los productos es muy buena y lo mejor es su precio, 10/10. 🤩✨",
         "autor": "Mariano Arango",
         "fecha": "2026-08-02T18:44:03.309Z"
-      },
-      {
-        "uuid": "9896925a-8128-4f9b-86ae-3e6016ce049d",
-        "producto": "Paleta de sombras atenea victory",
-        "productoHandle": "paleta-de-sobras-atenea-victory",
-        "calificacion": 5,
-        "texto": "Muy bueno el producto",
-        "autor": "Anónimo",
-        "fecha": "2026-08-02T18:17:45.099Z"
       },
       {
         "uuid": "3b717eab-1821-41e6-ab56-9855c1d41e8c",
