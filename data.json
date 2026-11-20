@@ -1,23 +1,8 @@
 {
-  "updatedAt": "2026-11-20T02:03:36.812Z",
+  "updatedAt": "2026-11-20T11:00:06.943Z",
   "timezone": "America/Bogota",
   "moneda": "COP",
   "dias": [
-    {
-      "fecha": "2026-10-21",
-      "ventas": 0,
-      "pedidos": 0,
-      "ticketPromedio": 0,
-      "carritosAbandonados": 0,
-      "productoTop": null,
-      "embudo": {
-        "visitas": 13,
-        "vioProducto": 12,
-        "agregoCarrito": 0,
-        "iniciarCheckout": 0,
-        "compras": 0
-      }
-    },
     {
       "fecha": "2026-10-22",
       "ventas": 0,
@@ -455,8 +440,23 @@
       "carritosAbandonados": 0,
       "productoTop": null,
       "embudo": {
-        "visitas": 6,
+        "visitas": 8,
         "vioProducto": 8,
+        "agregoCarrito": 0,
+        "iniciarCheckout": 0,
+        "compras": 0
+      }
+    },
+    {
+      "fecha": "2026-11-20",
+      "ventas": 0,
+      "pedidos": 0,
+      "ticketPromedio": 0,
+      "carritosAbandonados": 0,
+      "productoTop": null,
+      "embudo": {
+        "visitas": 0,
+        "vioProducto": 0,
         "agregoCarrito": 0,
         "iniciarCheckout": 0,
         "compras": 0
@@ -489,9 +489,9 @@
       "fecha": "2026-11-03T11:26:28-05:00"
     }
   ],
-  "ga4UpdatedAt": "2026-11-20T02:03:38.021Z",
+  "ga4UpdatedAt": "2026-11-20T11:00:08.296Z",
   "resenas": {
-    "updatedAt": "2026-11-20T02:04:39.101Z",
+    "updatedAt": "2026-11-20T11:01:08.282Z",
     "items": [
       {
         "uuid": "67b45591-020e-485d-a4d9-436f8e056254",
